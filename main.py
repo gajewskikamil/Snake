@@ -37,11 +37,10 @@ while game_is_on:
     if snake.head.xcor() > 480 or snake.head.xcor() < -480 or snake.head.ycor() > 480 or snake.head.ycor() < -480:
         game_is_on = False
         gameover.game_over()
-    if len(snake.segments) > 4:
-        for seg in snake.segments[2:]:
-            if snake.head.distance(seg) < 10:
-                game_is_on = False
-                gameover.game_over()
+    for seg in snake.segments[2:]:
+        if snake.head.distance(seg) < 10:
+            game_is_on = False
+            gameover.game_over()
 
 
 screen.exitonclick()

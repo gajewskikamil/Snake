@@ -51,7 +51,3 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
-
-    # def eat(self):
-    #     food_position = (Food.pos_x , Food.pos_y)
-    #     if self.head.position is food_position:
