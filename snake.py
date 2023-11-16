@@ -29,6 +29,12 @@ class Snake:
         new_segment.goto(last_seg_cords)
         self.segments.append(new_segment)
 
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000,1000)
+        self.segments.clear()
+        self.__init__()
+
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
